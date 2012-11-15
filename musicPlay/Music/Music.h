@@ -19,6 +19,7 @@
     BOOL recently;//最近播放
     BOOL love;//是否收藏
     NSString *lrcpath;//歌词路径
+    NSString *httpp;
 }
 @property(nonatomic,retain)NSURL *url;//歌曲的地址
 @property(nonatomic,retain)NSString *name;//歌曲的名字
@@ -31,6 +32,7 @@
 @property(nonatomic,assign)BOOL love;//是否收藏
 
 @property(nonatomic,retain)NSString *lrcpath;//歌词路径
+@property(nonatomic,strong)NSString *httpp;
 //-(id)init;
 /*******************************************
  函数名称：-(id)initUrl:(NSURL *)iUrl
