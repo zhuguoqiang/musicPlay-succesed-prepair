@@ -12,7 +12,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 @implementation Music
-@synthesize url,name,album,artist,image,number,recently,love,lrcpath,httpp;
+@synthesize url,name,album,artist,image,number,recently,love,lrcpath;
 /*
 -(id)init{
     self=[super init];
