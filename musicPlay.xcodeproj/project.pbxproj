@@ -153,6 +153,7 @@
 		3FEBA90A15E32E5800A1E798 /* MusicListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBA8E015E32E5800A1E798 /* MusicListTableCell.m */; };
 		3FEBA90B15E32E5800A1E798 /* MusicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBA8E215E32E5800A1E798 /* MusicListViewController.m */; };
 		3FEBA90D15E3307D00A1E798 /* 8b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FEBA90C15E3307D00A1E798 /* 8b.jpg */; };
+		4A9124731654C74B0075D141 /* DHMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9124721654C74B0075D141 /* DHMusicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -378,6 +379,8 @@
 		3FEBA8E115E32E5800A1E798 /* MusicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListViewController.h; sourceTree = "<group>"; };
 		3FEBA8E215E32E5800A1E798 /* MusicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListViewController.m; sourceTree = "<group>"; };
 		3FEBA90C15E3307D00A1E798 /* 8b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8b.jpg; sourceTree = "<group>"; };
+		4A9124711654C74B0075D141 /* DHMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHMusicViewController.h; sourceTree = "<group>"; };
+		4A9124721654C74B0075D141 /* DHMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHMusicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +504,8 @@
 				3FA2E91815E316DA00CA786A /* MusicDb.m */,
 				3FA2E91915E316DA00CA786A /* MusicList.h */,
 				3FA2E91A15E316DA00CA786A /* MusicList.m */,
+				4A9124711654C74B0075D141 /* DHMusicViewController.h */,
+				4A9124721654C74B0075D141 /* DHMusicViewController.m */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -1160,6 +1165,7 @@
 				3FE9D54815EB167A00EE7320 /* MusicSqlite.m in Sources */,
 				3FE9D54E15EB1A7000EE7320 /* allTheMusicTable.m in Sources */,
 				3FE9D54F15EB1A7000EE7320 /* myCollectTable.m in Sources */,
+				4A9124731654C74B0075D141 /* DHMusicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
