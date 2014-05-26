@@ -1,5 +1,5 @@
 //
-//  MusicPlay.h
+//  musicPlayerViewController.h
 //  MusicPlay
 //
 //  Created by student on 12-8-10.
@@ -16,7 +16,7 @@
 @class MyView;
 @class VolVIew;
 
-@interface MusicPlay : UIViewController <UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate,UIScrollViewDelegate>
+@interface musicPlayerViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate,UIScrollViewDelegate>
 {
     int ishandorsys;      //判断是 手动滑动的还是代码滑动的
     int playmodel;//单曲循环 0 ，列表循环 1，顺序播放 2，随机播放 3。

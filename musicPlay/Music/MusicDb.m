@@ -10,8 +10,11 @@
 #import "MusicDb.h"
 #import "Music.h"
 #import "MusicList.h"
+
 @implementation MusicDb
+
 @synthesize fileName,musicList;
+
 /*******************************************
  函数名称：-(id)init
  函数功能：音乐初始化方法
@@ -19,13 +22,14 @@
  返回 值 ： N/A
  ********************************************/
 -(id)init{
-    self=[super init];
-    if(!self){
+    self = [super init];
+    if (!self) {
         [self release];
         return nil;
     }
-    fileName=[[NSString alloc]init];
-    musicList=[[MusicList alloc]init];
+    fileName = [[NSString alloc]init];
+    musicList = [[MusicList alloc] init];
+    
     return self;
 }
 /*******************************************

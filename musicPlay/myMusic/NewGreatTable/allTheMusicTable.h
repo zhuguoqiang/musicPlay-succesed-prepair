@@ -10,7 +10,7 @@
 
 @interface allTheMusicTable : UITableViewController
 
-@property(nonatomic, retain)NSMutableArray *allMusicName;
-@property(nonatomic, retain)NSMutableArray *allMusicPath;
+@property (nonatomic, retain) NSMutableArray *allMusicName;
+@property (nonatomic, retain) NSMutableArray *allMusicPath;
 
 @end

@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-@protocol cellItemDelegate;
+
+@protocol cellItemDelegate
+
+@optional
+/*******************************************
+ 函数名称：(void)onCellItem:(int)index
+ 函数功能：获取用户单击九宫格的序号，实现此协议时实现
+ 传入参数：(int)index
+ 返回 值： N/A
+ ********************************************/
+- (void)onCellItem:(int)index;
+
+@end
 
 @interface FirstMusicCell : UITableViewCell
 {
@@ -20,11 +32,11 @@
     UILabel *lbl2;  //九宫格里的第二个格的标签
     UILabel *lbl3;  //九宫格里的第三个格的标签
     
-	id <cellItemDelegate> tableCellDelegate;
+	id <cellItemDelegate> delegate;
     
 }
 
-@property(nonatomic, assign) id <cellItemDelegate> tableCellDelegate;;
+@property(nonatomic, assign) id <cellItemDelegate> delegate;;
 
 @property(nonatomic, retain) UIButton *btn1;
 @property(nonatomic, retain) UIButton *btn2;
@@ -53,17 +65,4 @@
 @end
 
 
-@protocol cellItemDelegate
 
-@optional
-
-/*******************************************
- 函数名称：(void)onCellItem:(int)index  
- 函数功能：获取用户单击九宫格的序号，实现此协议时实现
- 传入参数：(int)index
- 返回 值： N/A
- ********************************************/
-- (void)onCellItem:(int)index;
-
-
-@end

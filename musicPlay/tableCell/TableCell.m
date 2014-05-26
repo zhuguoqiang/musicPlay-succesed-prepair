@@ -10,12 +10,14 @@
 #import "TableCell.h"
 
 @implementation TableCell
-@synthesize xu,name,downImage,aritst,alubm,delegate;
+
+@synthesize lbIndex,name,btnDownload,aritst,alubm,delegate;
+
 -(id)init{
     if(self=[super init]){
-        self.xu=[[UILabel alloc]initWithFrame:CGRectMake(5, 15, 20, 30)];
-        self.xu.textColor=[UIColor redColor];
-        self.xu.backgroundColor=[UIColor clearColor];
+        self.lbIndex=[[UILabel alloc]initWithFrame:CGRectMake(5, 15, 20, 30)];
+        self.lbIndex.textColor=[UIColor redColor];
+        self.lbIndex.backgroundColor=[UIColor clearColor];
         
         self.name=[[UILabel alloc]initWithFrame:CGRectMake(30, 0, 100, 30)];
         [self.name setFont:[UIFont fontWithName:@"Helvetica" size:15]];
@@ -30,12 +32,12 @@
         [self.alubm setFont:[UIFont fontWithName:@"Helvetica" size:15]];
         self.alubm.backgroundColor=[UIColor clearColor];
         //self.downImage=[[UIImageView alloc]initWithFrame:CGRectMake(260, 5, 30, 30)];
-        self.downImage=[[UIButton alloc]initWithFrame:CGRectMake(260, 5, 30, 30)];
-        [self.downImage addTarget:self action:@selector(downMusic:) forControlEvents:UIControlEventTouchUpInside];
+        self.btnDownload=[[UIButton alloc]initWithFrame:CGRectMake(260, 5, 30, 30)];
+        [self.btnDownload addTarget:self action:@selector(downMusic:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.contentView addSubview:self.xu];
+        [self.contentView addSubview:self.lbIndex];
         [self.contentView addSubview:self.name];
-        [self.contentView addSubview:self.downImage];
+        [self.contentView addSubview:self.btnDownload];
         [self.contentView addSubview:self.aritst];
         [self.contentView addSubview:self.alubm];
     }
@@ -49,12 +51,15 @@
  返回 值 ： N/A
  ********************************************/
 -(void)downMusic:(UIButton*)button{
-    [self.delegate downMusic:button];
+    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(downMusic:)]) {
+        [self.delegate downMusic:button];
+    }
 }
+
 - (void)dealloc {
-    self.xu=nil;
+    self.lbIndex = nil;
     self.name=nil;
-    self.downImage=nil;
+    self.btnDownload = nil;
     self.aritst=nil;
     self.alubm=nil;
     [super dealloc];

@@ -9,7 +9,8 @@
 #import "FirstMusicCell.h"
 
 @implementation FirstMusicCell
-@synthesize tableCellDelegate;
+
+@synthesize delegate;
 
 @synthesize btn1;
 @synthesize btn2;
@@ -62,8 +63,6 @@
         
         [self.contentView addSubview:btn3];
 	    [self.contentView addSubview:lbl3];
-        
-        return self;
     }
     
     return self;
@@ -79,8 +78,11 @@
 - (void)click:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-	//NSLog(@"tag:%d",button.tag);
-	[tableCellDelegate onCellItem:button.tag];
+    
+    if (nil != delegate && [delegate responsToSelector:@selector(onCellItem:)]) {
+        [delegate onCellItem:button.tag];
+    }
+	
 }
 
 - (void)dealloc 

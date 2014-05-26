@@ -1,12 +1,12 @@
 //
-//  MusicPlay.m
+//  musicPlayerViewController.m
 //  MusicPlay
 //
 //  Created by student on 12-8-10.
 //  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "MusicPlay.h"
+#import "musicPlayerViewController.h"
 #import "LrcParser.h"
 #import "LrcUnit.h"
 #import <AVFoundation/AVFoundation.h>
@@ -16,7 +16,7 @@
 #import "Music.h"
 #import "VolVIew.h"
 
-@implementation MusicPlay
+@implementation musicPlayerViewController
 
 @synthesize table = _table;
 @synthesize lrc = _lrc;
@@ -266,7 +266,7 @@
     NSLog(@"path = %@",path);
     NSString *lrcpath = [[NSBundle mainBundle]pathForResource:@"七里香 - 周杰伦" ofType:@"lrc"];
     self.player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:path ] error:nil];
-    self.music = [[Music alloc]initUrl:[NSURL fileURLWithPath:path ] andLrcPath:lrcpath];
+    self.music = [[Music alloc]initWithUrl:[NSURL fileURLWithPath:path ] andLrcPath:lrcpath];
     if (!self.music) {
         NSString *musicpath;
         NSString *musiclrcpath;

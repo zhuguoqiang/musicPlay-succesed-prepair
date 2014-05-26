@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVAudioPlayer.h>
-#import "tableCell.h"
+#import "TableCell.h"
 #import "Music.h"
 
 @class TableCell;
@@ -22,17 +22,13 @@
 @class ASIHTTPRequest;
 @class MusicListViewController;
 
-/*******************************************
- 函数名称：@protocol pauseMusicDelegate <NSObject>
- 函数功能：协议实现暂停那个播放器播放歌曲
- 传入参数：sender
- 返回 值 ： N/A
- ********************************************/
+
 @protocol pauseMusicDelegate <NSObject>
 
 -(void)pause;
 
 @end
+
 @interface onlineMusicViewController : UIViewController<donwMusicDelegate,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 {
     MusicListViewController *huancun;
@@ -54,7 +50,7 @@
     TableCell* tmpCell;
     LrcParser* lrc;
     AVAudioPlayer* player;
-    NSString* path;//沙河路径，用于网络解析的歌词存储的
+    NSString* path;//沙盒路径，用于网络解析的歌词存储的
     AudioStreamer* iAudioStreamer;
     NSTimer *tick;
     

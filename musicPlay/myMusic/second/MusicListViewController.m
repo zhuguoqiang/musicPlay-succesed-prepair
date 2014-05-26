@@ -80,7 +80,7 @@
     //    self.iFirstMusicTableView.myCollectMusicName=[[[NSMutableArray alloc] init] autorelease];
     //    self.iFirstMusicTableView.myCollectMusicPath=[[[NSMutableArray alloc] init] autorelease];
     
-    self.iFirstMusicTableView.loveMusicDb=[[[MusicDb alloc] init] autorelease];
+    self.iFirstMusicTableView.loveMusicDb = [[[MusicDb  alloc] init] autorelease];
     
     self.iFirstMusicTableView.latePlayMusicDb=[[[MusicDb alloc] init] autorelease];
     

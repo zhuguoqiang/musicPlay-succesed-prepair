@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class MusicListViewController;
 @class FirstMusicTableView;
+
 @interface myCollectTable : UITableViewController
 
-@property(nonatomic, retain)NSMutableArray *GreatArray;
-@property(nonatomic, retain)MusicListViewController *iMusicListView;
+@property (nonatomic, retain) NSMutableArray *GreatArray;
+@property (nonatomic, retain) MusicListViewController *iMusicListView;
 
-@property(nonatomic, retain)FirstMusicTableView *iFirstMusicView;
+@property (nonatomic, retain) FirstMusicTableView *iFirstMusicView;
+
 @end

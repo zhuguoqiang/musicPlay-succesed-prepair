@@ -64,22 +64,18 @@
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentPath = [searchPaths objectAtIndex:0];
     self.path = documentPath;
-    NSLog(@"沙河路径 is %@",self.path);
+    NSLog(@"沙盒路径 is %@",self.path);
+    
     self.searchView = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 320,40)];
-    self.searchView.tintColor = [UIColor blueColor];
-    self.searchView.text = @"歌曲名";
+    self.searchView.tintColor = [UIColor clearColor];
+    self.searchView.placeholder = @"歌曲名";
     //self.searchView.showsCancelButton = YES;
     self.searchView.delegate = self;
-    
-    UIImage* image = [[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"back" ofType:@"jpg"]];
-    UIImageView* imageView = [[UIImageView alloc]initWithImage:image];
-    imageView.frame = CGRectMake(0, 0, 320, 480);
-    [self.view addSubview:imageView];
-    
+ 
     self.playView = [[UIView alloc]initWithFrame:CGRectMake(7,50,300,80)];
     //[self.playView setBackgroundColor:[UIColor clearColor]];
     
-    self.playImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"search.png"]];
+    self.playImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"play.png"]];
     self.playImageView.frame = CGRectMake(5, 10, 60, 60);
     [self.playView addSubview:self.playImageView];
     
@@ -107,11 +103,12 @@
     [self.playButton addTarget:self action:@selector(buttonChange) forControlEvents:UIControlEventTouchUpInside];
     [self.playView addSubview:self.playButton];
     
-    self.onlineMusicProgress = [[UISlider alloc]initWithFrame:CGRectMake(5, 310, 150, 20)];
+    self.onlineMusicProgress = [[UISlider alloc]initWithFrame:CGRectMake(5, 330, 300, 10)];
     
-    self.onlineMusicProgressLabel = [[UILabel alloc]initWithFrame:CGRectMake(200, 310, 80, 20)];
+    self.onlineMusicProgressLabel = [[UILabel alloc]initWithFrame:CGRectMake(250, 300, 50, 20)];
     [self.onlineMusicProgressLabel setBackgroundColor:[UIColor clearColor]];
     self.onlineMusicProgressLabel.text = @"00/00";
+    
     //listTabel
     self.listTable = [[UITableView alloc]initWithFrame:CGRectMake(5,130,300,150)];
     [self.listTable setBackgroundColor:[UIColor clearColor]];
@@ -124,6 +121,9 @@
     [self.view addSubview:self.listTable];
     [self.view addSubview:self.onlineMusicProgress];
     [self.view addSubview:self.onlineMusicProgressLabel];
+    
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.jpg"]]];
 }
 
 -(void)buttonChange
@@ -236,17 +236,17 @@
         self.tmpCell.delegate=self;
     }   
     if ([self.songlist count]==0) {
-        self.tmpCell.xu.text=@"0";
+        self.tmpCell.lbIndex.text=@"0";
         self.tmpCell.name.text=@"无";
     }else{
         JsonMusicMode *tmp=((JsonMusicMode*)[self.songlist objectAtIndex:indexPath.row]);
-        self.tmpCell.xu.text=[NSString stringWithFormat:@"%d",(indexPath.row+1)];
+        self.tmpCell.lbIndex.text=[NSString stringWithFormat:@"%d",(indexPath.row+1)];
         self.tmpCell.name.text=tmp.song_name;
         self.tmpCell.aritst.text=tmp.singer_name;
         self.tmpCell.alubm.text=tmp.album_name;
     }
-    [self.tmpCell.downImage setImage:[UIImage imageNamed:@"34149.png"] forState:UIControlStateNormal];
-    self.tmpCell.downImage.tag=indexPath.row;
+    [self.tmpCell.btnDownload setImage:[UIImage imageNamed:@"34149.png"] forState:UIControlStateNormal];
+    self.tmpCell.btnDownload.tag=indexPath.row;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

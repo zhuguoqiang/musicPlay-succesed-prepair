@@ -12,17 +12,17 @@
 -(void)downMusic:(UIButton*)sender;
 @end
 @interface TableCell : UITableViewCell{
-    UILabel *xu;
+    UILabel *lbIndex;
     UILabel *name;
     UILabel *aritst;
     UILabel *alubm;
-    UIButton *downImage;
+    UIButton *btnDownload;
 }
-@property (nonatomic, retain) UILabel *xu;
+@property (nonatomic, retain) UILabel *lbIndex;
 @property (nonatomic, retain) UILabel *name;
 @property (nonatomic, retain) UILabel *aritst;
 @property (nonatomic, retain) UILabel *alubm;
-@property (nonatomic, retain) UIButton *downImage;
+@property (nonatomic, retain) UIButton *btnDownload;
 @property (nonatomic, assign) id<donwMusicDelegate>delegate;
 /*******************************************
  函数名称：-(void)downMusic:(UIButton*)button;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FirstMusicCell.h"
 #import "ImageAndTitle.h"
+
 @class Read;
 @class Write;
 @class MusicListViewController;
@@ -20,7 +21,7 @@
 
 @interface FirstMusicTableView : UITableViewController <cellItemDelegate,UITabBarControllerDelegate,UITextFieldDelegate>
 {
-    FirstMusicCell *iFirstMusicCell;//字定义单元格
+    FirstMusicCell *iFirstMusicCell;//自定义单元格
     NSArray* titleArray;   //用来转载九宫格的显示的文字
     NSArray* imageArray;   //用来转载九宫格的显示的图片
     NSMutableArray *itemArray; //用来装置九宫格文字数组和图片数组的数组
@@ -40,23 +41,23 @@
 @property (nonatomic, retain) NSMutableArray *array7;
 @property (nonatomic, retain) NSMutableArray *itemarray;
 
-@property(nonatomic, strong)Read *read;
-@property(nonatomic, strong)Write *write;
-@property(nonatomic, retain)NSMutableArray *listPath;
-@property(nonatomic, retain)NSArray *path;
+@property (nonatomic, strong) Read *read;
+@property (nonatomic, strong) Write *write;
+@property (nonatomic, retain) NSMutableArray *listPath;
+@property (nonatomic, retain) NSArray *path;
 
-@property(nonatomic, retain)MusicListViewController *iMusicListViewController;
+@property (nonatomic, retain) MusicListViewController *iMusicListViewController;
 
-@property(nonatomic, retain)MusicDb *loveMusicDb;
+@property (nonatomic, retain) MusicDb *loveMusicDb;
 
-@property(nonatomic, retain)MusicDb *latePlayMusicDb;
+@property (nonatomic, retain) MusicDb *latePlayMusicDb;
 
-@property(nonatomic, retain)myCollectTable *imyCollectTable;
-@property(nonatomic, retain)NSMutableArray *tmpNewTable;
-@property(nonatomic, retain)allTheMusicTable *iallMusicTable;
+@property (nonatomic, retain) myCollectTable *imyCollectTable;
+@property (nonatomic, retain) NSMutableArray *tmpNewTable;
+@property (nonatomic, retain) allTheMusicTable *iallMusicTable;
 
-@property(nonatomic, retain)MusicDb *allMusicDb;
-@property(nonatomic, retain)MusicSqlite* ms;
+@property (nonatomic, retain) MusicDb *allMusicDb;
+@property (nonatomic, retain) MusicSqlite* ms;
 
 /*******************************************
  函数名称：InitData 
@@ -64,7 +65,9 @@
  传入参数：N/A
  返回 值 ： N/A
  ********************************************/
-- (void)InitData;   
+
+- (void)InitData;
+
 /*******************************************
  函数名称：(void)setItem:(NSArray *)temperatureArray 
  函数功能：转载九宫格的图片数组和文字数组

@@ -8,11 +8,14 @@
 
 #import "myCollectTable.h"
 #import "MusicListViewController.h"
-#import "FirstMusicTableView.h"
+#import "FirstMusicTableView.h" 
+
 @implementation myCollectTable
+
 @synthesize GreatArray;
 @synthesize iMusicListView;
 @synthesize iFirstMusicView;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,11 +40,6 @@
     [super viewDidLoad];
     
     self.iFirstMusicView=[[FirstMusicTableView alloc] init];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     UIView *headerView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
     headerView.backgroundColor=[UIColor clearColor];
@@ -89,23 +87,6 @@
     
 }
 
-/*******************************************
- 函数名称：-(void)backFirstView
- 函数功能：返回（九宫格）界面，实现跳转
- 传入参数：无
- 返回 值 ：无
- ********************************************/
--(void)backFirstView
-{
-    [self dismissModalViewControllerAnimated:YES];
-}
-
--(void)dealloc
-{
-    [super dealloc];
-    [iFirstMusicView release];
-}
-
 
 - (void)viewDidUnload
 {
@@ -136,6 +117,23 @@
     [super viewDidDisappear:animated];
 }
 
+/*******************************************
+ 函数名称：-(void)backFirstView
+ 函数功能：返回（九宫格）界面，实现跳转
+ 传入参数：无
+ 返回 值 ：无
+ ********************************************/
+-(void)backFirstView
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)dealloc
+{
+    [super dealloc];
+    [iFirstMusicView release];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -146,15 +144,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [self.GreatArray count];
 }
 
@@ -171,9 +165,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    // Configure the cell...
-  //  cell.textLabel.text=@"dfadfasf";
+
     cell.textLabel.text=[self.GreatArray objectAtIndex:[indexPath row]];
     return cell;
 }
@@ -224,17 +216,9 @@
     self.iMusicListView.tmpIndex=9;
     self.iFirstMusicView.iMusicListViewController.listData=nil;
     self.iFirstMusicView.iMusicListViewController.tmpPath=nil;
-//    [self presentModalViewController:self.iFirstMusicView.iMusicListViewController animated:YES];
-//    [self.iFirstMusicView enterList]; 
+
     [self presentModalViewController:self.iMusicListView animated:YES];
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+
 }
 
 @end
